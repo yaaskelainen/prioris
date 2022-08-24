@@ -1,10 +1,11 @@
+import { Abilities } from "../abilities/Abilities";
 import { HeroTypes } from "./HeroTypes";
 
 export class HeroType {
 
     private type:string;
     private hp!:number;
-    private abilities!:string;
+    private abilities!:Abilities;
     private armour!:number;
     private evasion!:number;
 
@@ -14,31 +15,31 @@ export class HeroType {
         switch (type) {
             case HeroTypes.warrior:
                 this.hp = 100;
-                this.abilities = "Armour";
+                this.abilities = Abilities.armourboost;
                 this.armour=5;
                 this.evasion=20;                
                 break;
             case HeroTypes.priest:
                 this.hp = 90;
-                this.abilities = "Heal";
+                this.abilities = Abilities.heal;
                 this.armour=4;
                 this.evasion=20;                
                 break;
             case HeroTypes.mage:
                 this.hp = 70;
-                this.abilities = "Firestorm";
+                this.abilities = Abilities.firestorm;
                 this.armour=1;
                 this.evasion=5;                
                 break;
             case HeroTypes.rouge:
                 this.hp = 80;
-                this.abilities = "Dodge";
+                this.abilities = Abilities.dodge;
                 this.armour=3;
                 this.evasion=30;                
                 break;
             case HeroTypes.archer:
                 this.hp = 80;
-                this.abilities = "Headshot";
+                this.abilities = Abilities.headshot;
                 this.armour=2;
                 this.evasion=15;                
                 break;
@@ -65,12 +66,12 @@ export class HeroType {
       public setHp(v : number) {
         this.hp = v;
       }
-      public getAbilities() : string {
+      public getAbilities() : Abilities {
         return this.abilities
       }
 
       
-      public setAbilities(v : string) {
+      public setAbilities(v : Abilities) {
         this.abilities = v;
       }
 
