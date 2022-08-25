@@ -8,6 +8,7 @@ export class Hero extends HeroType{
     private name:string;
     private weapon:Weapon;
     
+    
     constructor(name:string, type:HeroTypes, weapon:Weapons){
         super(type);
         this.name=name;
